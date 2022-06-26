@@ -9,7 +9,12 @@
 */
 
 
+
 /* ---- Base Rules ---- */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
@@ -30,7 +35,8 @@ h1 {
     h1 {
         font-size: 7em;
         margin: 2em 4rem 1em;
-    }
+    }    
+
 }
 
 h2 {
@@ -65,25 +71,25 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
-    padding: 2%;
     padding-left: 0;
     margin: 0;
-    text-align: center;
+    text-align: right;
 }
 
 .navbar__menu li {
-    display: inline-flex;
-    padding-left: 2%;
+    display: inline-block;
 }
 
 .navbar__menu .menu__link {
-    display: inline-block;
+    display: block;
+    padding: 1em;
     font-weight: bold;
     text-decoration: none;
     color: #000;
 }
 
-.navbar__menu .menu__link:hover {
+.navbar__menu .menu__link:hover,
+.navbar__menu .active__link {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
@@ -118,9 +124,13 @@ section {
 }
 
 @media only screen and (min-width: 35em){
+
     .landing__container {
         max-width: 50em;
         padding: 4em;
+    }
+    section {
+        min-height: fit-content;
     }
 }
 
@@ -209,16 +219,17 @@ section.your-active-class .landing__container::after {
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
+
 /* Section Active Styles Keyframe Animations */
 @keyframes rotate {
 	from {
 		transform: rotate(0deg)
-		           translate(-1em)
-		           rotate(0deg);
+		            translate(-1em)
+		            rotate(0deg);
 	}
 	to {
 		transform: rotate(360deg)
-		           translate(-1em) 
-		           rotate(-360deg);
+		            translate(-1em) 
+		            rotate(-360deg);
 	}
 }
